@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = race_gui
+TARGET = race_gui_web
 
 QT = core gui
 
