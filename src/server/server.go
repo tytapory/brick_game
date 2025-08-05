@@ -200,12 +200,10 @@ func handleActions(w http.ResponseWriter, r *http.Request) {
 
 func enableCORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Установите заголовки CORS
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
-		// Обработка preflight-запросов
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusOK)
 			return
